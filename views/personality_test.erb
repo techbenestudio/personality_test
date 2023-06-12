@@ -1,0 +1,28 @@
+<turbo-stream action="update" target="content">
+  <template>
+    <h1>Personality test</h1>
+
+    <form action="/evaluate" method="post">
+      <input type="hidden" name="industry" value="<%= @industry %>">
+      <input type="hidden" name="position" value="<%= @position %>">
+      <input type="hidden" name="experience_level" value="<%= @experience_level %>">
+
+      <% @personality_test.each do |question| %>
+        <h3><%= question['question'] %></h3>
+
+        <ul>
+          <% question['answers'].each do |answer| %>
+            <li>
+              <label>
+                <input type="radio" name="questions[<%= question['question'] %>]" value="<%= answer %>" <%=@ready ? '' : disabled="disabled" %>>
+                <span><%= answer %></span>
+              </label>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+
+      <button type="submit" <%=@ready ? '' : disabled="disabled" %>>Submit</button>
+    </form>
+  </template>
+</turbo-stream>

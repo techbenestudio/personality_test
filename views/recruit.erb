@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Personality test using OpenAI API</title>
+  <script type="module">
+    import hotwiredTurbo from 'https://cdn.skypack.dev/@hotwired/turbo';
+  </script>
+  <link rel="stylesheet" href="/stylesheet.css" type="text/css">
+</head>
+<body>
+  <turbo-stream-source src="ws://localhost:9292/ws"></turbo-stream-source>
+  <div id="container">
+    <%=erb :loading%>
+  </div>
+</body>
+</html>

@@ -1,0 +1,141 @@
+:root {
+  --primary-color: #FF3F56;  /* Red */
+  --secondary-color: #50E3C2;  /* Green */
+  --background-color: #FFFFFF; /* White */
+  --secondary-background-color: #F6F6F6; /* White */
+  --text-color: #000000;  /* Black */
+  --font: 'Gilroy Light', sans-serif;
+  --strong-font: 'Gilroy ExtraBold', sans-serif;
+}
+
+body {
+  background-color: var(--background-color);
+  background-size: 20px 20px;
+  color: var(--text-color);
+  font-family: var(--font);;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary-color);
+  font-family: var(--strong-font);
+}
+
+h1 {
+  color: var(--text-color);
+}
+
+p {
+  line-height: 1.5;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--text-color);
+}
+
+ul, ol {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul {
+  margin-bottom: 12px;
+  border=bottom: var(--secondary-color);
+  padding-bottom: 12px;
+}
+
+li {
+  margin-bottom: 12px;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+}
+
+button[disabled],
+button:hover[disabled] {
+  background-color: var(--text-color);
+  color: var(--background-color);
+  cursor: not-allowed;
+}
+
+input[type="text"], textarea, select {
+  border: 1px solid var(--secondary-color);
+  border-radius: 4px;
+  padding: 6px 6px 7px 6px;
+  background-color: var(--background-color);
+}
+
+
+.chat-container {
+  background-color: var(--background-color);
+}
+
+#content, .chat-form {
+  width: 450px;
+  margin: 0 auto;
+  background-color: var(--secondary-background-color);
+  display: block;
+  padding: 12px;
+}
+
+.message {
+  text-align: right;
+}
+
+.message .block {
+  background-color: var(--secondary-color);
+  padding: 12px;
+  border-radius: 12px 0 12px 12px;
+  margin-bottom: 12px;
+  display: inline-block;
+  align: right;
+}
+
+.message h4 {
+  margin: 0 0 12px 0;
+
+  color: var(--text-color);
+}
+
+.message.you {
+  text-align: left;
+}
+
+.message.you .block {
+  background-color: var(--primary-color);
+  border-radius: 12px 12px 12px 0;
+  align: left;
+}
+
+.chat-form {
+  text-align: right;
+}
+
+input#message {
+  width: 300px;
+}
+
+ul li label input {
+  float: left;
+}
+
+ul li label span {
+  display: block;
+  padding-left: 30px;
+}

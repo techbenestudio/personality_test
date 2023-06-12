@@ -1,0 +1,15 @@
+<turbo-stream action="append" target="content">
+  <template>
+    <div class="message <%=@role.downcase %>">
+      <div class="block">
+        <h4><%=@role %></h4>
+        <div class="content">
+          <%=@message %>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.scrollTo(0, document.body.scrollHeight);
+    </script>
+  </template>
+</turbo-stream>

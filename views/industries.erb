@@ -1,0 +1,15 @@
+<turbo-stream action="update" target="content">
+  <template>
+    <h1>Select industry</h1>
+
+    <form action="/positions" method="post">
+      <select name="industry" id="positions">
+        <% @industries.each do |industry| %>
+          <option value="<%= industry %>"><%= industry %></option>
+        <% end %>
+      </select>
+
+      <button type="submit">Submit</button>
+    </form>
+  </template>
+</turbo-stream>

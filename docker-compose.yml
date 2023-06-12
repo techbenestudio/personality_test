@@ -1,0 +1,10 @@
+version: "3.0"
+services:
+  web:
+    build: .
+    command: bundle exec rerun --background 'rackup --host 0.0.0.0'
+    volumes:
+      - .:/app:delegated
+    ports:
+      - "9292:9292"
+    env_file: .env

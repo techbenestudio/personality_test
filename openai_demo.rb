@@ -121,9 +121,25 @@ post '/evaluate' do
 end
 
 get '/chat' do
+  start_conversation('system', Messages.medic)
 
+  erb :chat
 end
 
 post '/chat' do
-  
+  @message = params['message']
+
+  store_message('user', @message)
+  @role = 'You'
+
+  settings.sockets.each{|s| s.send(erb :message)}
+
+  Thread.new do
+    @message = openai_response
+    @role = 'Medic'
+
+    settings.sockets.each{|s| s.send(erb :message)}
+  end
+
+  erb :chat_form
 end

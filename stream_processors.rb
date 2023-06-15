@@ -15,6 +15,23 @@ module StreamProcessors
   end
 
   def parse_text_to_json(text)
-    {}
+    lines = text.split("\n")
+    result = []
+    current_question = nil
+  
+    lines.each do |line|
+      line.strip!
+  
+      if line.start_with?("Q:")
+        current_question = line[2..-1].strip
+        result << { "question" => current_question, "answers" => [] }
+      elsif line.start_with?("A:")
+        answer = line[2..-1].strip
+        result.last["answers"] << answer if current_question
+      end
+    end
+  
+    result
   end
+  
 end

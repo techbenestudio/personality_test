@@ -42,18 +42,56 @@ class Messages
 
     def positions(industry)
       <<-MESSAGE
+      Give me a list of positions in #{industry} industry.
 
+      The response format should be a JSON array.
+      Do not add any markings or notes to the response.
+      Example response:
+      ["position 1", "position 2"]
       MESSAGE
     end
 
     def experience_levels(industry, position)
       <<-MESSAGE
+      Give me a list of experience levels in #{position} position in #{industry} industry.
 
+      The response format should be a JSON array.
+      Do not add any markings or notes to the response.
+      Example response:
+      ["experience level 1", "experience level 2"]
       MESSAGE
     end
 
     def personality_test(industry, position, experience_level)
       <<-MESSAGE
+        You want to create a survey to determine a candidates personality.
+
+        You want to employ them for a #{experience_level} level #{position} position inside #{industry}
+        industry.
+
+        The questions should ask the candidate directly.
+        The questions should be indirect and focous on situations that this person may encounter
+        during work as a #{position}
+
+        The survey should have 5 questions.
+        Each question should have 4 answers.
+        Every question must be marked with 'Q:'
+        Every answer must be marked with 'A:'
+
+        Example response:
+
+        Q: A question
+        A: Answer 1
+        A: Answer 2
+        A: Answer 3
+        A: Answer 4
+
+        Q: Another question
+        A: Answer 1
+        A: Answer 2
+        A: Answer 3
+        A: Answer 4
+
 
       MESSAGE
     end

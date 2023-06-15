@@ -98,6 +98,15 @@ class Messages
 
     def evaluation(industry, position, experience_level, questions)
       <<-MESSAGE
+        You want to employ a person in a team for a #{position} in a company which
+        operates in #{industry} industry.
+
+        On a personalty test the candidates answered as follows:
+        #{questions.to_a.map{|q| "#{q[0]} #{q[1]}"}.join("\n")}
+
+        Create an evaluation of the candidate's personality upon the above answers.
+
+        Consider the risks and advantages of employing this person.
 
       MESSAGE
     end

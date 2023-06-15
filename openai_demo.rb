@@ -60,7 +60,16 @@ get '/' do
 end
 
 get '/recruit' do
+  start_conversation('system',Messages.recruit)
 
+  Thread.new do
+    store_message('user', Messages.industries)
+    @industries = JSON.parse openai_response
+
+    settings.sockets.each{|s| s.send(erb :industries)}
+  end
+
+  erb :recruit
 end
 
 post '/positions' do

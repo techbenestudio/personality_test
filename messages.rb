@@ -24,13 +24,19 @@ class Messages
 
     def recruit
       <<-MESSAGE
-
+        You are recruiter, who is recruiting for a company in multiple industries. You want to give a
+        personality test for each candidate.
       MESSAGE
     end
 
     def industries
       <<-MESSAGE
+        Give me a list of industries.
 
+        The response format should be a JSON array.
+        Do not add any markings or notes to the response.
+        Example response:
+        ["industry 1", "industry 2"]
       MESSAGE
     end
 

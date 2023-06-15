@@ -121,7 +121,7 @@ post '/evaluate' do
 end
 
 get '/chat' do
-  start_conversation('system', Messages.medic)
+  start_conversation('system', Messages.master_yoda)
 
   erb :chat
 end
@@ -136,7 +136,7 @@ post '/chat' do
 
   Thread.new do
     @message = openai_response
-    @role = 'Medic'
+    @role = 'Master Yoda'
 
     settings.sockets.each{|s| s.send(erb :message)}
   end
